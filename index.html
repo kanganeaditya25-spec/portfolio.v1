@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Carter | Enthusiastic Web Developer</title>
+    <meta name="description" content="Portfolio of Alex Carter, an enthusiastic web developer specializing in high-performance web applications, interactive user experiences, and clean code architecture.">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Grid Background -->
+    <div class="grid-bg"></div>
+
+    <!-- Particles Canvas Background -->
+    <div class="canvas-container">
+        <canvas id="particles-canvas"></canvas>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="custom-cursor"></div>
+    <div class="custom-cursor-follower" id="custom-cursor-follower"></div>
+
+    <!-- Header Navigation -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#home" class="logo hover-target">
+                <i class="fa-solid fa-code"></i> Alex<span>.dev</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active hover-target">Home</a>
+                <a href="#about" class="nav-link hover-target">About</a>
+                <a href="#skills" class="nav-link hover-target">Skills</a>
+                <a href="#projects" class="nav-link hover-target">Projects</a>
+                <a href="#experience" class="nav-link hover-target">Experience</a>
+                <a href="#contact" class="nav-link hover-target">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle-btn hover-target" id="theme-toggle" aria-label="Toggle dark/light theme">
+                    <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+                    </svg>
+                    <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                    </svg>
+                </button>
+
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="badge-interactive">
+                        <span class="badge-pulse"></span> Available for freelance & full-time work
+                    </div>
+                    <h1 class="hero-title text-gradient-subtle">
+                        Crafting High-Performance <br>Web <span>Experiences</span>.
+                    </h1>
+                    <p class="hero-description">
+                        Hi, I'm Alex Carter, an enthusiastic web developer based in San Francisco. I build fast, interactive, and user-centric websites that turn code into digital art.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary hover-target">
+                            View My Work <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary hover-target">
+                            Let's Talk
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Terminal Mockup -->
+                <div class="terminal-window hover-target">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="terminal-btn terminal-close"></span>
+                            <span class="terminal-btn terminal-minimize"></span>
+                            <span class="terminal-btn terminal-maximize"></span>
+                        </div>
+                        <div class="terminal-title">developer.sh</div>
+                        <div style="width: 52px;"></div> <!-- Spacer -->
+                    </div>
+                    <div class="terminal-body" id="terminal-body">
+                        <!-- Content will be simulated via JS -->
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$</span>
+                            <span class="terminal-command">whoami</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-output">alex_carter (Developer, Tech-Enthusiast, Coffee-Lover)</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$</span>
+                            <span class="terminal-command">cat skills.json</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-output">[ "HTML5", "CSS3", "JavaScript", "React.js", "Node.js", "SQL" ]</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$</span>
+                            <span class="terminal-command">npm run develop</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-output">Ready in 450ms. Building the future...</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$</span>
+                            <span class="terminal-output">
+                                <span id="cli-typing-text"></span><span class="terminal-cursor"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <span class="section-subtitle">Biography</span>
+                <h2 class="section-title text-gradient-subtle">About Me</h2>
+                
+                <div class="about-grid">
+                    <div class="about-img-container hover-target">
+                        <div class="about-img-wrapper">
+                            <img src="assets/profile.png" alt="Alex Carter - Web Developer Profile Image">
+                        </div>
+                    </div>
+
+                    <div class="about-details">
+                        <p class="about-text">
+                            I am a developer who genuinely loves coding. My passion for web technologies started when I built my first static page back in 2018, and I've been hooked ever since. I focus on creating responsive, efficient, and visual interfaces that leave an impression.
+                        </p>
+                        <p class="about-text">
+                            I specialize in front-end development with a strong backing in Node.js server architecture. Beyond writing code, I love experimenting with animations, 3D physics on the web, and optimizing load times down to milliseconds. Let's make something beautiful and solid together!
+                        </p>
+                        
+                        <div class="about-stats">
+                            <div class="stat-card hover-target">
+                                <span class="stat-number">4+</span>
+                                <span class="stat-label">Years Experience</span>
+                            </div>
+                            <div class="stat-card hover-target">
+                                <span class="stat-number">30+</span>
+                                <span class="stat-label">Projects Completed</span>
+                            </div>
+                            <div class="stat-card hover-target">
+                                <span class="stat-number">99%</span>
+                                <span class="stat-label">Success Rate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="container">
+                <span class="section-subtitle">My Stack</span>
+                <h2 class="section-title text-gradient-subtle">Core Expertise</h2>
+                
+                <div class="skills-container">
+                    <div class="skills-category hover-target">
+                        <h3 class="category-title">Frontend Technologies</h3>
+                        <div class="skills-grid">
+                            <div class="skill-tag hover-target" data-skill="html"><i class="fa-brands fa-html5" style="color: #E34F26;"></i> HTML5</div>
+                            <div class="skill-tag hover-target" data-skill="css"><i class="fa-brands fa-css3-alt" style="color: #1572B6;"></i> CSS3</div>
+                            <div class="skill-tag hover-target" data-skill="js"><i class="fa-brands fa-js" style="color: #F7DF1E;"></i> JavaScript (ES6+)</div>
+                            <div class="skill-tag hover-target" data-skill="react"><i class="fa-brands fa-react" style="color: #61DAFB;"></i> React.js</div>
+                            <div class="skill-tag hover-target" data-skill="next"><i class="fa-solid fa-cube" style="color: #FFFFFF;"></i> Next.js</div>
+                            <div class="skill-tag hover-target" data-skill="tailwind"><i class="fa-solid fa-wind" style="color: #06B6D4;"></i> TailwindCSS</div>
+                            <div class="skill-tag hover-target" data-skill="canvas"><i class="fa-solid fa-paintbrush" style="color: #EF4444;"></i> HTML5 Canvas</div>
+                        </div>
+                    </div>
+
+                    <div class="skills-category hover-target">
+                        <h3 class="category-title">Backend & Infrastructure</h3>
+                        <div class="skills-grid">
+                            <div class="skill-tag hover-target" data-skill="node"><i class="fa-brands fa-node-js" style="color: #339933;"></i> Node.js</div>
+                            <div class="skill-tag hover-target" data-skill="express"><i class="fa-solid fa-server" style="color: #7E7E7E;"></i> Express.js</div>
+                            <div class="skill-tag hover-target" data-skill="python"><i class="fa-brands fa-python" style="color: #3776AB;"></i> Python</div>
+                            <div class="skill-tag hover-target" data-skill="postgres"><i class="fa-solid fa-database" style="color: #336791;"></i> PostgreSQL</div>
+                            <div class="skill-tag hover-target" data-skill="mongodb"><i class="fa-solid fa-leaf" style="color: #47A248;"></i> MongoDB</div>
+                            <div class="skill-tag hover-target" data-skill="rest"><i class="fa-solid fa-network-wired" style="color: #10B981;"></i> RESTful APIs</div>
+                        </div>
+                    </div>
+
+                    <div class="skills-category hover-target">
+                        <h3 class="category-title">Tools & Workflows</h3>
+                        <div class="skills-grid">
+                            <div class="skill-tag hover-target" data-skill="git"><i class="fa-brands fa-git-alt" style="color: #F05032;"></i> Git & GitHub</div>
+                            <div class="skill-tag hover-target" data-skill="docker"><i class="fa-brands fa-docker" style="color: #2496ED;"></i> Docker</div>
+                            <div class="skill-tag hover-target" data-skill="vite"><i class="fa-solid fa-bolt" style="color: #FFC91F;"></i> Vite / Webpack</div>
+                            <div class="skill-tag hover-target" data-skill="figma"><i class="fa-brands fa-figma" style="color: #F24E1E;"></i> Figma</div>
+                            <div class="skill-tag hover-target" data-skill="linux"><i class="fa-brands fa-linux" style="color: #FCC624;"></i> Terminal & Linux</div>
+                            <div class="skill-tag hover-target" data-skill="cicd"><i class="fa-solid fa-rotate" style="color: #4285F4;"></i> CI/CD Pipelines</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="container">
+                <div class="projects-header">
+                    <div>
+                        <span class="section-subtitle">Portfolio</span>
+                        <h2 class="section-title text-gradient-subtle">Recent Projects</h2>
+                    </div>
+                    <!-- Filtering Buttons -->
+                    <div class="filter-controls">
+                        <button class="filter-btn active hover-target" data-filter="all">All</button>
+                        <button class="filter-btn hover-target" data-filter="frontend">Frontend</button>
+                        <button class="filter-btn hover-target" data-filter="fullstack">Fullstack</button>
+                        <button class="filter-btn hover-target" data-filter="creative">Creative</button>
+                    </div>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="projects-grid" id="projects-grid">
+                    <!-- Project 1: DevSpace (Frontend) -->
+                    <div class="project-card hover-target" data-category="frontend" data-project-id="devspace">
+                        <div class="project-thumbnail">
+                            <div class="project-overlay">
+                                <div class="project-details-btn"><i class="fa-solid fa-expand"></i></div>
+                            </div>
+                            <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: var(--bg-tertiary); color: var(--accent-primary);">
+                                <i class="fa-solid fa-keyboard" style="font-size: 4rem;"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span class="project-tag">Next.js</span>
+                                <span class="project-tag">Tailwind</span>
+                                <span class="project-tag">Markdown</span>
+                            </div>
+                            <h3 class="project-title">DevSpace Community</h3>
+                            <p class="project-description">A high-speed static developer blog platform compiled directly from markdown files, utilizing advanced SSG features.</p>
+                            <div class="project-footer">
+                                <div class="project-links">
+                                    <a href="#" class="project-link hover-target"><i class="fa-brands fa-github"></i> Source</a>
+                                    <a href="#" class="project-link hover-target"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: AlgoVis (Creative) -->
+                    <div class="project-card hover-target" data-category="creative" data-project-id="algovis">
+                        <div class="project-thumbnail">
+                            <div class="project-overlay">
+                                <div class="project-details-btn"><i class="fa-solid fa-expand"></i></div>
+                            </div>
+                            <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: var(--bg-tertiary); color: var(--accent-primary);">
+                                <i class="fa-solid fa-chart-line" style="font-size: 4rem;"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span class="project-tag">Vanilla JS</span>
+                                <span class="project-tag">HTML5 Canvas</span>
+                                <span class="project-tag">CSS3</span>
+                            </div>
+                            <h3 class="project-title">AlgoVis Visualizer</h3>
+                            <p class="project-description">An interactive dashboard visualizer displaying pathfinding and sorting algorithms in real-time on custom grid maps.</p>
+                            <div class="project-footer">
+                                <div class="project-links">
+                                    <a href="#" class="project-link hover-target"><i class="fa-brands fa-github"></i> Source</a>
+                                    <a href="#" class="project-link hover-target"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: CyberStore (Fullstack) -->
+                    <div class="project-card hover-target" data-category="fullstack" data-project-id="cyberstore">
+                        <div class="project-thumbnail">
+                            <div class="project-overlay">
+                                <div class="project-details-btn"><i class="fa-solid fa-expand"></i></div>
+                            </div>
+                            <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: var(--bg-tertiary); color: var(--accent-primary);">
+                                <i class="fa-solid fa-shield-halved" style="font-size: 4rem;"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span class="project-tag">React.js</span>
+                                <span class="project-tag">NodeJS</span>
+                                <span class="project-tag">PostgreSQL</span>
+                            </div>
+                            <h3 class="project-title">CyberStore Secure API</h3>
+                            <p class="project-description">A fully secure, JWT-authenticated e-commerce dashboard backend API featuring Stripe integration and PostgreSQL caching.</p>
+                            <div class="project-footer">
+                                <div class="project-links">
+                                    <a href="#" class="project-link hover-target"><i class="fa-brands fa-github"></i> Source</a>
+                                    <a href="#" class="project-link hover-target"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: TerminalGit (Creative) -->
+                    <div class="project-card hover-target" data-category="creative" data-project-id="terminalgit">
+                        <div class="project-thumbnail">
+                            <div class="project-overlay">
+                                <div class="project-details-btn"><i class="fa-solid fa-expand"></i></div>
+                            </div>
+                            <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: var(--bg-tertiary); color: var(--accent-primary);">
+                                <i class="fa-brands fa-git-alt" style="font-size: 4rem;"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span class="project-tag">React.js</span>
+                                <span class="project-tag">Vite</span>
+                                <span class="project-tag">CSS Grid</span>
+                            </div>
+                            <h3 class="project-title">Terminal Git Simulator</h3>
+                            <p class="project-description">An interactive Git learning tool mapping terminal commands to structured visual repository graph trees.</p>
+                            <div class="project-footer">
+                                <div class="project-links">
+                                    <a href="#" class="project-link hover-target"><i class="fa-brands fa-github"></i> Source</a>
+                                    <a href="#" class="project-link hover-target"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Timeline Section -->
+        <section id="experience">
+            <div class="container">
+                <span class="section-subtitle">Roadmap</span>
+                <h2 class="section-title text-gradient-subtle">My Journey</h2>
+
+                <div class="timeline">
+                    <!-- Experience 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content hover-target">
+                            <div class="timeline-header-info">
+                                <h3 class="timeline-role">Lead Frontend Developer</h3>
+                                <span class="timeline-date">2024 - Present</span>
+                            </div>
+                            <div class="timeline-company">PixelCraft Digital Agency</div>
+                            <p class="timeline-desc">
+                                Oversee development of performant client applications. Integrated complex CSS grid architectures, custom component frameworks, and reduced initial site bundle size by 40% across client profiles.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Experience 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content hover-target">
+                            <div class="timeline-header-info">
+                                <h3 class="timeline-role">Full-Stack Developer</h3>
+                                <span class="timeline-date">2022 - 2024</span>
+                            </div>
+                            <div class="timeline-company">CodeVibe Solutions</div>
+                            <p class="timeline-desc">
+                                Designed clean RESTful APIs and modern responsive dashboards. Orchestrated backend database migration to PostgreSQL and worked with React components to structure administrative tools.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Experience 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content hover-target">
+                            <div class="timeline-header-info">
+                                <h3 class="timeline-role">Junior Web Developer</h3>
+                                <span class="timeline-date">2020 - 2022</span>
+                            </div>
+                            <div class="timeline-company">SoftNet Systems</div>
+                            <p class="timeline-desc">
+                                Assisted in writing semantic HTML/CSS layouts, resolving QA bugs, and supporting content integrations across several e-commerce shopfronts.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <span class="section-subtitle">Contact</span>
+                <h2 class="section-title text-gradient-subtle">Get In Touch</h2>
+
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <p class="about-text">
+                            Have an exciting project idea, a position to fill, or just want to talk about development? Drop a message. I'm always open to discussing clean development systems and technical projects.
+                        </p>
+
+                        <div class="contact-card hover-target">
+                            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="contact-details-text">
+                                <span class="contact-label">Email Me</span>
+                                <a href="mailto:alex@carter.dev" class="contact-value hover-target">alex@carter.dev</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-card hover-target">
+                            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="contact-details-text">
+                                <span class="contact-label">Location</span>
+                                <span class="contact-value">San Francisco, CA</span>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="#" class="social-link hover-target" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" class="social-link hover-target" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link hover-target" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" class="social-link hover-target" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <form class="contact-form hover-target" id="contact-form">
+                        <div class="form-group">
+                            <label for="form-name" class="form-label">Full Name</label>
+                            <input type="text" id="form-name" class="form-input hover-target" placeholder="John Doe">
+                            <span class="form-error-msg" id="name-error">Please enter your name.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-email" class="form-label">Email Address</label>
+                            <input type="email" id="form-email" class="form-input hover-target" placeholder="john@example.com">
+                            <span class="form-error-msg" id="email-error">Please enter a valid email address.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-message" class="form-label">Message</label>
+                            <textarea id="form-message" class="form-input hover-target" placeholder="How can I help you?"></textarea>
+                            <span class="form-error-msg" id="message-error">Please enter a message.</span>
+                        </div>
+                        <button type="submit" class="btn btn-primary form-submit-btn hover-target" id="submit-btn">
+                            Send Message <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                        <div class="form-success-message" id="form-success">
+                            <i class="fa-solid fa-circle-check"></i> Message sent successfully! I'll get back to you soon.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-copy">
+                &copy; <span id="current-year">2026</span> Alex Carter. Made with <i class="fa-solid fa-heart footer-heart"></i> for the web.
+            </div>
+            <div>
+                Designing performance.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top-btn hover-target" id="scroll-top" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Project Details Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close-btn hover-target" id="modal-close" aria-label="Close modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modal-img-container">
+                <!-- Inner image elements injected via JS -->
+            </div>
+            <div class="modal-body">
+                <div class="modal-header-info">
+                    <div class="project-tags" id="modal-tags">
+                        <!-- Tags injected via JS -->
+                    </div>
+                    <h3 class="modal-title text-gradient-subtle" id="modal-title">Project Title</h3>
+                </div>
+                <p class="modal-description" id="modal-description">
+                    Detailed project explanation...
+                </p>
+                <div class="modal-info-grid">
+                    <div class="modal-info-column">
+                        <span class="modal-info-label">Category</span>
+                        <span class="modal-info-value" id="modal-category">Web Application</span>
+                    </div>
+                    <div class="modal-info-column">
+                        <span class="modal-info-label">Client / Focus</span>
+                        <span class="modal-info-value" id="modal-focus">Open Source / Creative</span>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <a href="#" class="btn btn-primary hover-target" id="modal-live-link" target="_blank">
+                        Visit Live Project <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <a href="#" class="btn btn-secondary hover-target" id="modal-github-link" target="_blank">
+                        View Source <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script imports -->
+    <script src="js/particles.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
