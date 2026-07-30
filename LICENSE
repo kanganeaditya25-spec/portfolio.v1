@@ -1,21 +1,27 @@
-MIT License
+Copyright (c) 2026 Aditya Kangane. All Rights Reserved.
 
-Copyright (c) 2026 Alex Carter
+PROPRIETARY AND CONFIDENTIAL
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This software and all associated files (the "Software") are the exclusive
+intellectual property of Aditya Kangane ("the Owner").
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+RESTRICTIONS — The following actions are strictly PROHIBITED without prior
+written permission from the Owner:
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+  1. Copying, reproducing, or duplicating the Software or any part of it.
+  2. Modifying, adapting, or creating derivative works based on the Software.
+  3. Distributing, publishing, sublicensing, or transferring the Software
+     to any third party.
+  4. Using the Software, in whole or in part, for any commercial, personal,
+     educational, or non-commercial purpose.
+  5. Reverse engineering, decompiling, or disassembling the Software.
+
+VIEWING — The source code is made publicly visible on GitHub solely for
+portfolio and demonstration purposes. Visibility does NOT grant any license,
+right, or permission to use the code in any form.
+
+ENFORCEMENT — Any unauthorized use, reproduction, or distribution of this
+Software may result in severe civil and criminal penalties and will be
+prosecuted to the maximum extent possible under applicable law.
+
+For permissions, contact: kanganeaditya25@gmail.com

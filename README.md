@@ -1,6 +1,6 @@
 # 🌐 Alex Carter — Developer Portfolio
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
+[![License](https://img.shields.io/badge/License-Proprietary%20%C2%A9%20Aditya%20Kangane-red.svg)](./LICENSE)
 [![Built with HTML](https://img.shields.io/badge/Built%20with-HTML5-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![Styled with CSS](https://img.shields.io/badge/Styled%20with-CSS3-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
