@@ -472,7 +472,7 @@
                             <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
                             <div class="contact-details-text">
                                 <span class="contact-label">Email Me</span>
-                                <a href="kanganeaditya25@gmail.com"
+                                <a href="mailto:kanganeaditya25@gmail.com"
                                     class="contact-value hover-target">kanganeaditya25@gmail.com</a>
                             </div>
                         </div>
@@ -486,7 +486,7 @@
                         </div>
 
                         <div class="social-links">
-                            <a href="mailto:https://github.com/kanganeaditya25-spec" class="social-link hover-target"
+                            <a href="https://github.com/kanganeaditya25-spec" class="social-link hover-target"
                                 aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
                             <a href="https://www.linkedin.com/in/aditya-kangane" class="social-link hover-target"
                                 aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -498,31 +498,40 @@
                     </div>
 
                     <!-- Contact Form -->
-                    <form class="contact-form hover-target" id="contact-form">
+                    <form class="contact-form hover-target" id="contact-form"
+                        action="https://formsubmit.co/kanganeaditya25@gmail.com" method="POST"
+                        data-endpoint="https://formsubmit.co/ajax/kanganeaditya25@gmail.com">
+                        <input type="hidden" name="_subject" value="New portfolio contact message">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off"
+                            aria-hidden="true">
                         <div class="form-group">
                             <label for="form-name" class="form-label">Full Name</label>
-                            <input type="text" id="form-name" class="form-input hover-target" placeholder="John Doe">
+                            <input type="text" id="form-name" name="name" class="form-input hover-target"
+                                placeholder="John Doe" autocomplete="name" required>
                             <span class="form-error-msg" id="name-error">Please enter your name.</span>
                         </div>
                         <div class="form-group">
                             <label for="form-email" class="form-label">Email Address</label>
-                            <input type="email" id="form-email" class="form-input hover-target"
-                                placeholder="john@example.com">
+                            <input type="email" id="form-email" name="email" class="form-input hover-target"
+                                placeholder="john@example.com" autocomplete="email" required>
                             <span class="form-error-msg" id="email-error">Please enter a valid email address.</span>
                         </div>
                         <div class="form-group">
                             <label for="form-message" class="form-label">Message</label>
-                            <textarea id="form-message" class="form-input hover-target"
-                                placeholder="How can I help you?"></textarea>
+                            <textarea id="form-message" name="message" class="form-input hover-target"
+                                placeholder="How can I help you?" required></textarea>
                             <span class="form-error-msg" id="message-error">Please enter a message.</span>
                         </div>
                         <button type="submit" class="btn btn-primary form-submit-btn hover-target" id="submit-btn">
                             Send Message <i class="fa-solid fa-paper-plane"></i>
                         </button>
-                        <div class="form-success-message" id="form-success">
+                        <div class="form-status-message form-success-message" id="form-success" role="status" aria-live="polite"
+                            hidden>
                             <i class="fa-solid fa-circle-check"></i> Message sent successfully! I'll get back to you
                             soon.
                         </div>
+                        <div class="form-status-message form-error-message" id="form-submit-error" role="alert" hidden></div>
                     </form>
                 </div>
             </div>

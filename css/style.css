@@ -1299,9 +1299,16 @@ textarea.form-input {
     justify-content: center;
 }
 
+.form-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
 /* Form success notification state */
-.form-success-message {
-    display: none;
+.form-status-message {
     background-color: rgba(16, 185, 129, 0.1);
     border: 1px solid rgba(16, 185, 129, 0.2);
     color: var(--accent-primary);
@@ -1310,6 +1317,16 @@ textarea.form-input {
     text-align: center;
     font-weight: 500;
     font-size: 0.95rem;
+}
+
+.form-status-message[hidden] {
+    display: none;
+}
+
+.form-error-message {
+    background-color: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.3);
+    color: #EF4444;
 }
 
 /* --- FOOTER --- */

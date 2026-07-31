@@ -418,73 +418,76 @@ function initContactForm() {
     const messageInput = document.getElementById('form-message');
     const submitBtn = document.getElementById('submit-btn');
     const successMsg = document.getElementById('form-success');
+    const submitError = document.getElementById('form-submit-error');
+    const originalBtnContent = submitBtn.innerHTML;
 
     // Simple email regex pattern
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    // Realtime error removal on focus
+    const setFieldError = (input, errorId, hasError) => {
+        const errorSpan = document.getElementById(errorId);
+        input.classList.toggle('error', hasError);
+        input.classList.toggle('success', !hasError && input.value.trim().length > 0);
+        input.setAttribute('aria-invalid', String(hasError));
+        if (errorSpan) errorSpan.style.display = hasError ? 'block' : 'none';
+        return !hasError;
+    };
+
+    const showSubmitError = (message) => {
+        successMsg.hidden = true;
+        submitError.textContent = message;
+        submitError.hidden = false;
+    };
+
+    // Clear field and submission errors as the visitor edits the form.
     [nameInput, emailInput, messageInput].forEach(input => {
         input.addEventListener('input', () => {
             input.classList.remove('error');
+            input.removeAttribute('aria-invalid');
             const errorSpan = document.getElementById(`${input.id.replace('form-', '')}-error`);
             if (errorSpan) errorSpan.style.display = 'none';
+            submitError.hidden = true;
         });
     });
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
-        let isValid = true;
 
-        // Name verification
-        if (!nameInput.value.trim()) {
-            nameInput.classList.add('error');
-            document.getElementById('name-error').style.display = 'block';
-            isValid = false;
-        } else {
-            nameInput.classList.add('success');
-        }
+        const isNameValid = setFieldError(nameInput, 'name-error', !nameInput.value.trim());
+        const isEmailValid = setFieldError(emailInput, 'email-error', !emailPattern.test(emailInput.value.trim()));
+        const isMessageValid = setFieldError(messageInput, 'message-error', !messageInput.value.trim());
 
-        // Email verification
-        if (!emailPattern.test(emailInput.value.trim())) {
-            emailInput.classList.add('error');
-            document.getElementById('email-error').style.display = 'block';
-            isValid = false;
-        } else {
-            emailInput.classList.add('success');
-        }
+        if (!isNameValid || !isEmailValid || !isMessageValid) return;
 
-        // Message verification
-        if (!messageInput.value.trim()) {
-            messageInput.classList.add('error');
-            document.getElementById('message-error').style.display = 'block';
-            isValid = false;
-        } else {
-            messageInput.classList.add('success');
-        }
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Sending...`;
+        successMsg.hidden = true;
+        submitError.hidden = true;
 
-        if (isValid) {
-            // Animate submit button state (mock load)
-            const originalBtnContent = submitBtn.innerHTML;
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Sending...`;
+        try {
+            const response = await fetch(form.dataset.endpoint || form.action, {
+                method: 'POST',
+                headers: { Accept: 'application/json' },
+                body: new FormData(form)
+            });
+            const result = await response.json().catch(() => ({}));
 
-            setTimeout(() => {
-                // Success state response
-                form.reset();
-                [nameInput, emailInput, messageInput].forEach(inp => inp.classList.remove('success'));
-                
-                submitBtn.style.display = 'none';
-                successMsg.style.display = 'block';
+            if (!response.ok || result.success !== 'true') {
+                throw new Error(result.message || 'The message could not be sent.');
+            }
 
-                // Revert form state back after 5 seconds
-                setTimeout(() => {
-                    successMsg.style.display = 'none';
-                    submitBtn.style.display = 'inline-flex';
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = originalBtnContent;
-                }, 5000);
-            }, 1500);
+            form.reset();
+            [nameInput, emailInput, messageInput].forEach(input => {
+                input.classList.remove('success');
+                input.removeAttribute('aria-invalid');
+            });
+            successMsg.hidden = false;
+        } catch (error) {
+            showSubmitError('Message could not be sent. Please try again or email me directly.');
+            console.error('Contact form submission failed:', error);
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnContent;
         }
     });
 }
