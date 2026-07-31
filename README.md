@@ -1,4 +1,4 @@
-# 🌐 Alex Carter — Developer Portfolio
+# 🌐 Aditya Kangane — Developer Portfolio
 
 [![License](https://img.shields.io/badge/License-Proprietary%20%C2%A9%20Aditya%20Kangane-red.svg)](./LICENSE)
 [![Built with HTML](https://img.shields.io/badge/Built%20with-HTML5-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
@@ -12,7 +12,7 @@ A **modern, fully responsive developer portfolio website** for Alex Carter — a
 
 ## 🖥️ Live Demo
 
-> **[🔗 View Live on Vercel →](https://portfolio-v1-kanganeaditya25-spec.vercel.app)**
+> **[🔗 View Live on Vercel →][https://aditya-portfolio-dev.vercel.app/]**
 
 ---
 
